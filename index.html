@@ -1,486 +1,346 @@
-
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content="Dinheiro Online do Zero: aprenda habilidades digitais, criar conteúdo, oferecer serviços e organizar seu dinheiro.">
+<meta name="viewport" content="width=device-width,initial-scale=1">
 <title>Dinheiro Online do Zero</title>
+
 <style>
-:root {
-  --bg:#07111f;
-  --panel:#101d30;
-  --panel2:#14263b;
-  --green:#35d07f;
-  --text:#f4f7fb;
-  --muted:#a8b5c6;
-  --line:#263950;
+*{box-sizing:border-box}
+body{
+margin:0;
+font-family:Arial,sans-serif;
+background:#07131a;
+color:#fff;
+line-height:1.6
 }
-* { box-sizing:border-box; }
-html { scroll-behavior:smooth; }
-body {
-  margin:0;
-  font-family:Arial,Helvetica,sans-serif;
-  background:var(--bg);
-  color:var(--text);
-  line-height:1.65;
+.container{
+max-width:1000px;
+margin:auto;
+padding:20px
 }
-a { color:inherit; }
-.wrap { width:min(1100px,92%); margin:auto; }
-header {
-  position:sticky; top:0; z-index:10;
-  background:#07111fee;
-  border-bottom:1px solid var(--line);
-  backdrop-filter:blur(12px);
+.hero{
+text-align:center;
+padding:75px 20px;
+background:linear-gradient(135deg,#062b2b,#075c50)
 }
-.nav {
-  display:flex; align-items:center;
-  justify-content:space-between; gap:15px;
-  padding:15px 0;
+h1{
+font-size:42px;
+margin:10px 0
 }
-.brand { font-weight:900; font-size:18px; }
-.brand span { color:var(--green); }
-nav { display:flex; gap:18px; flex-wrap:wrap; }
-nav a { text-decoration:none; color:var(--muted); font-size:14px; }
-nav a:hover { color:var(--green); }
-.hero { padding:75px 0 55px; }
-.hero-grid {
-  display:grid;
-  grid-template-columns:1.4fr .8fr;
-  gap:28px; align-items:center;
+h2{
+color:#55e6b0;
+margin-top:45px
 }
-.pill {
-  display:inline-block; color:var(--green);
-  border:1px solid #246b50; background:#0d2a23;
-  padding:6px 12px; border-radius:30px;
-  font-size:12px; font-weight:bold;
+.hero p{
+font-size:19px;
+color:#ddd
 }
-h1 { font-size:clamp(34px,6vw,60px); line-height:1.08; margin:18px 0; }
-h1 em { color:var(--green); font-style:normal; }
-.lead { color:var(--muted); font-size:17px; max-width:650px; }
-.actions { display:flex; gap:12px; flex-wrap:wrap; margin-top:25px; }
-.btn {
-  display:inline-block; text-decoration:none;
-  padding:12px 18px; border-radius:10px;
-  background:var(--green); color:#062016;
-  font-weight:bold; border:1px solid var(--green);
-  cursor:pointer; font-size:14px;
+.btn{
+display:inline-block;
+background:#19c98b;
+color:#04120d;
+padding:15px 28px;
+border-radius:10px;
+text-decoration:none;
+font-weight:bold;
+margin-top:15px
 }
-.btn.secondary { background:transparent; color:var(--text); border-color:var(--line); }
-.btn:hover { filter:brightness(1.08); }
-.hero-card {
-  background:linear-gradient(145deg,#142b40,#0d1929);
-  border:1px solid var(--line);
-  border-radius:20px; padding:24px;
-  box-shadow:0 20px 60px #0005;
+.btn:hover{
+background:#43e5ad
 }
-.hero-card h2 { margin-top:0; }
-.stat { display:flex; justify-content:space-between; gap:10px;
-  padding:12px 0; border-bottom:1px solid var(--line); }
-.stat:last-child { border:0; }
-.stat span { color:var(--muted); }
-section { padding:45px 0; }
-.section-title { font-size:30px; margin:0 0 8px; }
-.sub { color:var(--muted); margin:0 0 24px; }
-.cards {
-  display:grid; grid-template-columns:repeat(3,1fr);
-  gap:16px;
+.grid{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+gap:15px
 }
-.card {
-  background:var(--panel);
-  border:1px solid var(--line);
-  border-radius:15px; padding:20px;
+.card{
+background:#0d2028;
+padding:20px;
+border-radius:14px;
+border:1px solid #19413d
 }
-.card .icon { font-size:27px; }
-.card h3 { margin:8px 0; }
-.card p { color:var(--muted); margin-bottom:0; }
-.course { display:grid; grid-template-columns:1fr 300px; gap:20px; }
-.modules { display:grid; gap:14px; }
-details.module {
-  background:var(--panel);
-  border:1px solid var(--line);
-  border-radius:14px; overflow:hidden;
+.card h3{
+margin-top:0;
+color:#55e6b0
 }
-details.module summary {
-  cursor:pointer; padding:18px;
-  font-weight:bold; list-style:none;
-  display:flex; justify-content:space-between; gap:10px;
+.price{
+font-size:40px;
+color:#55e6b0;
+font-weight:bold;
+text-align:center
 }
-details.module summary::-webkit-details-marker { display:none; }
-details.module summary:after { content:"＋"; color:var(--green); }
-details.module[open] summary:after { content:"−"; }
-.tag { color:var(--green); font-size:12px; white-space:nowrap; }
-.module-body { padding:0 18px 18px; }
-.lesson {
-  padding:15px 0; border-top:1px solid var(--line);
+.offer{
+text-align:center;
+background:#0d2423;
+padding:30px;
+border-radius:16px;
+margin-top:30px;
+border:1px solid #1b5c4c
 }
-.lesson h3 { font-size:16px; margin:0 0 7px; }
-.lesson p { color:#c5d0dc; margin:6px 0; }
-.lesson ul { color:#c5d0dc; padding-left:20px; }
-.lesson-check { display:flex; gap:9px; align-items:flex-start; margin-top:12px; color:var(--muted); font-size:13px; }
-.lesson-check input { accent-color:var(--green); margin-top:5px; }
-.side { position:sticky; top:85px; align-self:start; }
-.progress {
-  height:9px; background:#263950;
-  border-radius:20px; overflow:hidden; margin:12px 0;
+.faq details{
+background:#0d2028;
+margin:10px 0;
+padding:16px;
+border-radius:10px
 }
-.progress-bar { height:100%; width:0; background:var(--green); transition:width .2s; }
-.side p { color:var(--muted); font-size:14px; }
-.checklist { display:grid; gap:12px; }
-.checklist label { display:flex; gap:10px; align-items:flex-start; }
-input[type=checkbox] { accent-color:var(--green); }
-.quiz-question {
-  padding:16px 0; border-bottom:1px solid var(--line);
+.faq summary{
+cursor:pointer;
+font-weight:bold;
+color:#55e6b0
 }
-.quiz-question p { font-weight:bold; margin-top:0; }
-.quiz-question label { display:block; color:#c5d0dc; padding:5px 0; }
-input[type=radio] { accent-color:var(--green); }
-#quiz-result { margin-top:15px; font-weight:bold; color:var(--green); }
-footer {
-  border-top:1px solid var(--line);
-  color:var(--muted); padding:25px 0;
-  font-size:13px; text-align:center;
+footer{
+text-align:center;
+color:#888;
+padding:40px 10px
 }
-.note {
-  border-left:3px solid var(--green);
-  background:#10251f; padding:13px 15px;
-  border-radius:0 9px 9px 0; color:#d5e9df;
-}
-@media(max-width:750px) {
-  .hero-grid,.course { grid-template-columns:1fr; }
-  .cards { grid-template-columns:1fr; }
-  .side { position:static; }
-  nav { gap:10px; }
-  nav a { font-size:12px; }
-  .hero { padding-top:45px; }
+@media(max-width:600px){
+h1{font-size:32px}
+.hero{padding:55px 15px}
 }
 </style>
 </head>
+
 <body>
 
-<header>
-  <div class="wrap nav">
-    <div class="brand">DINHEIRO <span>ONLINE</span></div>
-    <nav>
-      <a href="#inicio">Início</a>
-      <a href="#sobre">Sobre</a>
-      <a href="#aulas">Aulas</a>
-      <a href="#progresso">Progresso</a>
-    </nav>
-  </div>
-</header>
+<section class="hero">
+<div class="container">
 
-<main>
-<section class="hero" id="inicio">
-  <div class="wrap hero-grid">
-    <div>
-      <span class="pill">CURSO INTRODUTÓRIO • DO ZERO</span>
-      <h1>Aprenda habilidades para começar a <em>ganhar dinheiro</em> pela internet.</h1>
-      <p class="lead">
-        Um guia simples para conhecer formas de renda online,
-        criar conteúdos, oferecer serviços e organizar seus primeiros trabalhos.
-        Aprenda no seu ritmo, usando o celular.
-      </p>
-      <div class="actions">
-        <a class="btn" href="#aulas">Começar o curso →</a>
-        <a class="btn secondary" href="#sobre">Conhecer o conteúdo</a>
-      </div>
-    </div>
-    <div class="hero-card">
-      <span class="pill">SEU PRIMEIRO PASSO</span>
-      <h2>Do aprendizado à prática</h2>
-      <div class="stat"><span>Conteúdo</span><strong>4 módulos</strong></div>
-      <div class="stat"><span>Aulas</span><strong>12 aulas</strong></div>
-      <div class="stat"><span>Material</span><strong>Celular</strong></div>
-      <div class="stat"><span>Objetivo</span><strong>Praticar</strong></div>
-      <p>Sem promessa de dinheiro fácil. O foco é desenvolver habilidades úteis.</p>
-    </div>
-  </div>
-</section>
+<p>🚀 CURSO ONLINE</p>
 
-<section id="sobre">
-  <div class="wrap">
-    <h2 class="section-title">O que você vai aprender?</h2>
-    <p class="sub">Conhecimentos básicos para começar com responsabilidade.</p>
-    <div class="cards">
-      <div class="card">
-        <div class="icon">💡</div>
-        <h3>Entender a renda online</h3>
-        <p>Conheça serviços digitais, produtos, plataformas e como as pessoas podem receber por seu trabalho.</p>
-      </div>
-      <div class="card">
-        <div class="icon">📱</div>
-        <h3>Criar com o celular</h3>
-        <p>Aprenda noções de edição de vídeos, criação de artes e montagem de portfólio.</p>
-      </div>
-      <div class="card">
-        <div class="icon">🎯</div>
-        <h3>Planejar seus passos</h3>
-        <p>Organize tarefas, pense em preços e aprenda a identificar riscos e golpes.</p>
-      </div>
-    </div>
-  </div>
-</section>
+<h1>Dinheiro Online do Zero</h1>
 
-<section id="aulas">
-<div class="wrap">
-  <h2 class="section-title">Conteúdo do curso</h2>
-  <p class="sub">Abra cada módulo para estudar as aulas. Marque como concluídas conforme avançar.</p>
-  <div class="course">
-    <div class="modules">
+<p><strong>Aprenda a começar pela internet usando apenas o celular.</strong></p>
 
-      <details class="module" open>
-        <summary>Módulo 1 — Começando com consciência <span class="tag">3 aulas</span></summary>
-        <div class="module-body">
-          <article class="lesson">
-            <h3>Aula 1. Como funciona ganhar dinheiro pela internet</h3>
-            <p>Ganhar dinheiro online significa oferecer algo que outras pessoas valorizam. Pode ser um serviço, um produto ou um conteúdo que tenha uma forma legítima de monetização.</p>
-            <p><b>Exemplos:</b> edição de vídeos, criação de artes, aulas particulares, venda de produtos próprios e trabalho remoto.</p>
-            <p>Para começar, escolha uma habilidade, pratique e entenda quem poderia precisar dela. Nem toda atividade gera renda, e resultados dependem de esforço, qualidade, procura e tempo.</p>
-            <label class="lesson-check"><input type="checkbox" class="lesson-done"> Marcar aula como concluída</label>
-          </article>
-          <article class="lesson">
-            <h3>Aula 2. Renda, faturamento e lucro</h3>
-            <p><b>Faturamento</b> é o total recebido pelas vendas. <b>Custos</b> são os gastos para realizar o trabalho. <b>Lucro</b> é o que sobra depois de descontar os custos.</p>
-            <p>Exemplo: você vendeu uma arte por R$ 30 e gastou R$ 5 com recursos. Seu resultado antes de outros possíveis descontos é R$ 25.</p>
-            <p>Anote tudo. Não confunda dinheiro que entrou com dinheiro que realmente sobrou.</p>
-            <label class="lesson-check"><input type="checkbox" class="lesson-done"> Marcar aula como concluída</label>
-          </article>
-          <article class="lesson">
-            <h3>Aula 3. Como evitar golpes na internet</h3>
-            <p>Desconfie de promessas de dinheiro garantido, pedidos de pagamento para liberar ganhos, links suspeitos e pessoas que exigem seus códigos ou senhas.</p>
-            <ul>
-              <li>Nunca compartilhe senhas ou códigos de verificação.</li>
-              <li>Pesquise a empresa e procure avaliações independentes.</li>
-              <li>Leia regras, taxas e condições antes de aceitar uma oferta.</li>
-              <li>Não envie documentos ou dados bancários para desconhecidos.</li>
-            </ul>
-            <p>Se você for menor de idade, converse com seu responsável antes de criar contas, aceitar trabalhos ou movimentar dinheiro.</p>
-            <label class="lesson-check"><input type="checkbox" class="lesson-done"> Marcar aula como concluída</label>
-          </article>
-        </div>
-      </details>
+<p>
+Conheça ferramentas, estratégias e formas de criar oportunidades
+digitais de maneira simples e prática.
+</p>
 
-      <details class="module">
-        <summary>Módulo 2 — Criando com o celular <span class="tag">3 aulas</span></summary>
-        <div class="module-body">
-          <article class="lesson">
-            <h3>Aula 4. Edição de vídeos pelo celular</h3>
-            <p>Vídeos curtos podem ser usados em redes sociais, divulgação de pequenos negócios e projetos pessoais. Comece aprendendo a cortar trechos, organizar cenas, ajustar o áudio e inserir legendas.</p>
-            <p>Pratique com um vídeo de 15 a 30 segundos. Escolha um tema, faça uma abertura clara, organize as cenas e termine com uma mensagem objetiva.</p>
-            <p>Use apenas músicas, imagens e vídeos que você tenha direito de utilizar. Respeite a privacidade das pessoas que aparecem.</p>
-            <label class="lesson-check"><input type="checkbox" class="lesson-done"> Marcar aula como concluída</label>
-          </article>
-          <article class="lesson">
-            <h3>Aula 5. Como criar artes para vender</h3>
-            <p>Uma arte pode divulgar um produto, evento, promoção ou serviço. Para montar uma peça, defina o objetivo, escolha poucas cores, use letras legíveis e destaque a informação principal.</p>
-            <p><b>Exercício:</b> crie uma arte fictícia para uma lanchonete, com nome, produto, preço de exemplo e uma forma de contato inventada.</p>
-            <p>Monte versões diferentes e compare a leitura no celular. Não copie o trabalho de outros designers e verifique as licenças dos elementos usados.</p>
-            <label class="lesson-check"><input type="checkbox" class="lesson-done"> Marcar aula como concluída</label>
-          </article>
-          <article class="lesson">
-            <h3>Aula 6. Produtos digitais e afiliados</h3>
-            <p>Produto digital é um material entregue pela internet, como um e-book, um modelo ou uma aula gravada. Afiliado é quem divulga um produto de outra pessoa e pode receber comissão conforme as regras do programa.</p>
-            <p>Antes de divulgar, confira a qualidade do produto, as regras de comissão, as condições de reembolso e se a plataforma permite sua participação.</p>
-            <p>Não prometa resultados que você não pode garantir. Explique com clareza quando um link é de afiliado.</p>
-            <label class="lesson-check"><input type="checkbox" class="lesson-done"> Marcar aula como concluída</label>
-          </article>
-        </div>
-      </details>
+<a class="btn" href="#curso">
+CONHECER O CURSO
+</a>
 
-      <details class="module">
-        <summary>Módulo 3 — Preparando seu trabalho <span class="tag">3 aulas</span></summary>
-        <div class="module-body">
-          <article class="lesson">
-            <h3>Aula 7. Aplicativos gratuitos para começar</h3>
-            <p>Você pode começar com ferramentas gratuitas de edição de vídeo, design, documentos e organização. Antes de instalar, confira o nome do desenvolvedor, as permissões solicitadas e as avaliações.</p>
-            <p>Não é necessário baixar muitos aplicativos. Escolha uma ferramenta para cada tarefa e aprenda a usá-la bem.</p>
-            <p>Organize seus arquivos em pastas: projetos, imagens autorizadas, vídeos, entregas e referências.</p>
-            <label class="lesson-check"><input type="checkbox" class="lesson-done"> Marcar aula como concluída</label>
-          </article>
-          <article class="lesson">
-            <h3>Aula 8. Como montar seu primeiro portfólio</h3>
-            <p>Portfólio é uma seleção de exemplos que mostra o que você sabe fazer. Se ainda não tem clientes, crie projetos de demonstração e identifique-os como fictícios.</p>
-            <p>Inclua de três a cinco trabalhos, uma breve descrição do objetivo de cada um e quais habilidades você praticou.</p>
-            <p>Não publique dados pessoais de clientes sem autorização. Mantenha o portfólio simples e fácil de visualizar no celular.</p>
-            <label class="lesson-check"><input type="checkbox" class="lesson-done"> Marcar aula como concluída</label>
-          </article>
-          <article class="lesson">
-            <h3>Aula 9. Como encontrar os primeiros clientes</h3>
-            <p>Comece identificando pessoas ou pequenos negócios que possam precisar do serviço que você oferece. Prepare uma apresentação educada, curta e específica.</p>
-            <p>Exemplo: “Olá! Estou praticando edição de vídeos e preparei alguns exemplos. Se você tiver interesse, posso mostrar meu portfólio e explicar como funciona meu serviço.”</p>
-            <p>Não envie mensagens em massa, não insista após uma recusa e evite compartilhar endereço, escola, rotina ou outras informações pessoais. Menores devem envolver um responsável nos contatos e acordos.</p>
-            <label class="lesson-check"><input type="checkbox" class="lesson-done"> Marcar aula como concluída</label>
-          </article>
-        </div>
-      </details>
-
-      <details class="module">
-        <summary>Módulo 4 — Organização e ação <span class="tag">3 aulas</span></summary>
-        <div class="module-body">
-          <article class="lesson">
-            <h3>Aula 10. Como definir o preço do seu serviço</h3>
-            <p>O preço pode considerar o tempo, a dificuldade, os custos, a experiência e o que foi combinado com o cliente.</p>
-            <p>Exemplo de exercício: estime que uma tarefa leve duas horas. Pense em um valor por hora, some possíveis custos e calcule uma proposta. É apenas uma simulação, não uma tabela universal de preços.</p>
-            <p>Descreva o que está incluído, quantas revisões serão feitas e qual é o prazo de entrega. Combine tudo por escrito com ajuda do responsável, se necessário.</p>
-            <label class="lesson-check"><input type="checkbox" class="lesson-done"> Marcar aula como concluída</label>
-          </article>
-          <article class="lesson">
-            <h3>Aula 11. Como receber e organizar seu dinheiro</h3>
-            <p>Registre o que entrou, os custos, as taxas e o que ficou disponível. Separe as anotações por data e guarde comprovantes importantes.</p>
-            <p>Antes de usar uma plataforma de pagamentos, leia as regras de idade, identificação, tarifas e saque. Se você for menor, peça ao responsável para verificar as condições e participar quando for exigido.</p>
-            <p>Não use dados de outra pessoa sem autorização e não minta sobre sua idade para abrir contas.</p>
-            <label class="lesson-check"><input type="checkbox" class="lesson-done"> Marcar aula como concluída</label>
-          </article>
-          <article class="lesson">
-            <h3>Aula 12. Plano de ação de 7 dias</h3>
-            <p>Use esta semana como um roteiro de estudo e prática. Não existe garantia de conseguir clientes ou ganhar dinheiro em sete dias.</p>
-            <ul>
-              <li><b>Dia 1:</b> escolha uma habilidade para praticar.</li>
-              <li><b>Dia 2:</b> aprenda o básico com um tutorial confiável.</li>
-              <li><b>Dia 3:</b> faça seu primeiro projeto de demonstração.</li>
-              <li><b>Dia 4:</b> revise e melhore o projeto.</li>
-              <li><b>Dia 5:</b> organize seus exemplos em um portfólio.</li>
-              <li><b>Dia 6:</b> pesquise como funciona o serviço e seu público.</li>
-              <li><b>Dia 7:</b> revise o que aprendeu e planeje a próxima semana.</li>
-            </ul>
-            <label class="lesson-check"><input type="checkbox" class="lesson-done"> Marcar aula como concluída</label>
-          </article>
-        </div>
-      </details>
-    </div>
-
-    <aside class="side card" id="progresso">
-      <span class="tag">CHECKLIST</span>
-      <h3>Seu progresso</h3>
-      <strong id="progress-text">0 de 12 aulas</strong>
-      <div class="progress"><div class="progress-bar" id="progress-bar"></div></div>
-      <p id="progress-percent">0% concluído</p>
-      <button class="btn secondary" id="reset" type="button">Zerar progresso</button>
-      <hr style="border-color:var(--line);margin:20px 0">
-      <h3>Antes de começar</h3>
-      <p>☑ Estudar no meu ritmo</p>
-      <p>☑ Praticar o que aprendi</p>
-      <p>☑ Evitar promessas de dinheiro fácil</p>
-      <p>☑ Pedir ajuda ao responsável quando necessário</p>
-    </aside>
-  </div>
 </div>
 </section>
 
-<section id="atividade">
-<div class="wrap">
-  <h2 class="section-title">Questionário rápido</h2>
-  <p class="sub">Confira o que você entendeu. Escolha uma resposta por pergunta.</p>
-  <div class="card">
-    <form id="quiz">
-      <div class="quiz-question">
-        <p>1. O que é lucro?</p>
-        <label><input type="radio" name="q1" value="a"> Todo o dinheiro que entrou</label>
-        <label><input type="radio" name="q1" value="b"> O que sobra depois de descontar os custos</label>
-        <label><input type="radio" name="q1" value="c"> O número de clientes</label>
-      </div>
-      <div class="quiz-question">
-        <p>2. O que fazer diante de uma promessa de dinheiro garantido?</p>
-        <label><input type="radio" name="q2" value="a"> Pagar imediatamente</label>
-        <label><input type="radio" name="q2" value="b"> Enviar sua senha para confirmar</label>
-        <label><input type="radio" name="q2" value="c"> Desconfiar e verificar a oferta</label>
-      </div>
-      <div class="quiz-question">
-        <p>3. Para que serve um portfólio?</p>
-        <label><input type="radio" name="q3" value="a"> Mostrar exemplos do seu trabalho</label>
-        <label><input type="radio" name="q3" value="b"> Garantir renda automática</label>
-        <label><input type="radio" name="q3" value="c"> Substituir a prática</label>
-      </div>
-      <div class="quiz-question">
-        <p>4. O que fazer antes de usar uma plataforma de pagamento sendo menor de idade?</p>
-        <label><input type="radio" name="q4" value="a"> Informar uma idade falsa</label>
-        <label><input type="radio" name="q4" value="b"> Conferir as regras com um responsável</label>
-        <label><input type="radio" name="q4" value="c"> Usar os dados de um desconhecido</label>
-      </div>
-      <button class="btn" type="submit">Conferir respostas</button>
-      <div id="quiz-result" aria-live="polite"></div>
-    </form>
-  </div>
+
+<main class="container" id="curso">
+
+<h2>🎯 O que você vai aprender</h2>
+
+<div class="grid">
+
+<div class="card">
+<h3>💻 Renda online</h3>
+<p>
+Entenda as principais formas de trabalhar e criar oportunidades
+na internet.
+</p>
 </div>
+
+<div class="card">
+<h3>📱 Pelo celular</h3>
+<p>
+Conheça ferramentas que podem ser utilizadas diretamente pelo celular.
+</p>
+</div>
+
+<div class="card">
+<h3>🎨 Serviços digitais</h3>
+<p>
+Aprenda ideias de serviços que podem ser oferecidos pela internet.
+</p>
+</div>
+
+<div class="card">
+<h3>🛡️ Segurança</h3>
+<p>
+Aprenda a identificar golpes e tomar cuidados antes de começar.
+</p>
+</div>
+
+</div>
+
+
+<h2>📚 O que você encontrará no curso</h2>
+
+<div class="grid">
+
+<div class="card">
+<h3>Aula 1</h3>
+<p>Como funciona ganhar dinheiro pela internet</p>
+</div>
+
+<div class="card">
+<h3>Aula 2</h3>
+<p>Renda, faturamento e lucro</p>
+</div>
+
+<div class="card">
+<h3>Aula 3</h3>
+<p>Como evitar golpes na internet</p>
+</div>
+
+<div class="card">
+<h3>Aula 4</h3>
+<p>Edição de vídeos pelo celular</p>
+</div>
+
+<div class="card">
+<h3>Aula 5</h3>
+<p>Como criar artes para vender</p>
+</div>
+
+<div class="card">
+<h3>Aula 6</h3>
+<p>Produtos digitais e afiliados</p>
+</div>
+
+<div class="card">
+<h3>Aula 7</h3>
+<p>Aplicativos gratuitos para começar</p>
+</div>
+
+<div class="card">
+<h3>Aula 8</h3>
+<p>Como montar seu primeiro portfólio</p>
+</div>
+
+<div class="card">
+<h3>Aula 9</h3>
+<p>Como encontrar os primeiros clientes</p>
+</div>
+
+<div class="card">
+<h3>Aula 10</h3>
+<p>Como definir o preço do seu serviço</p>
+</div>
+
+<div class="card">
+<h3>Aula 11</h3>
+<p>Como receber e organizar seu dinheiro</p>
+</div>
+
+<div class="card">
+<h3>Aula 12</h3>
+<p>Plano de ação de 7 dias</p>
+</div>
+
+</div>
+
+
+<h2>🔒 Acesso às aulas</h2>
+
+<div class="card">
+
+<h3>Conteúdo protegido</h3>
+
+<p>
+As aulas completas não ficam disponíveis nesta página pública.
+</p>
+
+<p>
+Após a confirmação da compra, o aluno recebe acesso ao conteúdo
+do curso pela área de membros configurada para os compradores.
+</p>
+
+<p>
+Assim, somente quem adquirir o curso poderá acessar as aulas.
+</p>
+
+</div>
+
+
+<h2>🎁 Bônus</h2>
+
+<div class="card">
+
+<ul>
+<li>Checklist para começar</li>
+<li>Lista de aplicativos gratuitos</li>
+<li>Ideias de serviços digitais</li>
+<li>Modelo de portfólio</li>
+<li>Plano de ação de 7 dias</li>
+</ul>
+
+</div>
+
+
+<section class="offer">
+
+<h2>🔥 Comece agora</h2>
+
+<p>
+Tenha acesso ao curso completo.
+</p>
+
+<div class="price">
+R$ 29,90
+</div>
+
+<p>
+Pagamento seguro pela Kiwify.
+</p>
+
+<a
+class="btn"
+href="https://pay.kiwify.com.br/gIdHVjd"
+target="_blank">
+QUERO COMEÇAR
+</a>
+
 </section>
 
-<section>
-<div class="wrap">
-  <div class="note">
-    <b>Importante:</b> este é um material introdutório para estudo. Não promete renda nem substitui orientação profissional. Respeite as regras das plataformas, a legislação e sua segurança. Se você é menor de idade, envolva seu responsável em cadastros, contratos, contatos comerciais e pagamentos.
-  </div>
+
+<h2>❓ Perguntas frequentes</h2>
+
+<div class="faq">
+
+<details>
+<summary>Preciso ter experiência?</summary>
+<p>
+Não. O curso foi criado para quem está começando.
+</p>
+</details>
+
+<details>
+<summary>Posso fazer pelo celular?</summary>
+<p>
+Sim. O conteúdo foi pensado para ser acompanhado pelo celular.
+</p>
+</details>
+
+<details>
+<summary>As aulas ficam disponíveis antes da compra?</summary>
+<p>
+Não. As aulas completas devem ser disponibilizadas somente na área
+de acesso aos compradores.
+</p>
+</details>
+
+<details>
+<summary>O curso garante ganhos?</summary>
+<p>
+Não. O curso é educativo e não garante resultados financeiros.
+Os resultados dependem da aplicação e das circunstâncias de cada pessoa.
+</p>
+</details>
+
 </div>
-</section>
+
 </main>
 
+
 <footer>
-  <div class="wrap">
-    <b>Dinheiro Online do Zero</b><br>
-    Material introdutório para estudar habilidades digitais.<br>
-    © <span id="year"></span> • Feito para aprender com responsabilidade.
-  </div>
+
+<p>© 2026 Dinheiro Online do Zero</p>
+
+<p>
+Conteúdo educativo. Resultados podem variar conforme dedicação e aplicação.
+</p>
+
 </footer>
 
-<script>
-const checks = [...document.querySelectorAll(".lesson-done")];
-const bar = document.getElementById("progress-bar");
-const text = document.getElementById("progress-text");
-const percent = document.getElementById("progress-percent");
-const storageKey = "dinheiroOnlineAulasV1";
-
-function updateProgress() {
-  const done = checks.filter(c => c.checked).length;
-  const total = checks.length;
-  const pct = total ? Math.round(done / total * 100) : 0;
-  text.textContent = done + " de " + total + " aulas";
-  percent.textContent = pct + "% concluído";
-  bar.style.width = pct + "%";
-  try {
-    localStorage.setItem(storageKey,
-      JSON.stringify(checks.map(c => c.checked)));
-  } catch(e) {}
-}
-
-try {
-  const saved = JSON.parse(localStorage.getItem(storageKey) || "[]");
-  checks.forEach((c, i) => c.checked = saved[i] === true);
-} catch(e) {}
-
-checks.forEach(c => c.addEventListener("change", updateProgress));
-document.getElementById("reset").addEventListener("click", () => {
-  if (!confirm("Tem certeza que deseja zerar seu progresso?")) return;
-  checks.forEach(c => c.checked = false);
-  updateProgress();
-});
-updateProgress();
-
-document.getElementById("year").textContent = new Date().getFullYear();
-
-document.getElementById("quiz").addEventListener("submit", function(e) {
-  e.preventDefault();
-  const answers = {q1:"b", q2:"c", q3:"a", q4:"b"};
-  let score = 0;
-  let answered = 0;
-  Object.keys(answers).forEach(name => {
-    const selected = document.querySelector(
-      'input[name="' + name + '"]:checked'
-    );
-    if (selected) {
-      answered++;
-      if (selected.value === answers[name]) score++;
-    }
-  });
-  const result = document.getElementById("quiz-result");
-  if (answered < 4) {
-    result.textContent = "Responda às 4 perguntas para conferir.";
-  } else {
-    result.textContent = "Você acertou " + score +
-      " de 4 perguntas. " +
-      (score === 4 ? "Parabéns! Você entendeu o conteúdo!" :
-      "Revise as aulas e tente novamente.");
-  }
-});
-</script>
 </body>
 </html>
